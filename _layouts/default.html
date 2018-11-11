@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			{% include analytics_head.html %}
-			<title>{{ page.title }}</title>
-			{% seo %}
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<!-- link to main stylesheet -->
-			<link rel="stylesheet" type="text/css" href="/css/main.css">
-		</head>
-		<body>
-			
-			{% include analytics_body.html %}
-      <header id="js-header">
-        <nav>
-          <a href="/">Home</a>|
-          <a href="/products">Products</a>|
-          <a href="/about">About</a>
-        </nav>
-      </header>
-      <div id="body">
-				{{ content }
-      </div><!-- /.container -->
-      <footer>
+<html>
+	<head>
+		{% include analytics_head.html %}
+		<title>{{ page.title }}</title>
+		{% seo %}
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+	</head>
+	<body>
+		{% include analytics_body.html %}
+		<header id="js-header">
+			<nav>
+				<a href="/">Home</a>|
+			 	<a href="/products">Products</a>|
+			 	<a href="/about">About</a>
+			</nav>
+		</header>
+		<div id="body">
+			{{ content }}
+		</div><!-- /.container -->
+    <footer>
         <p>Copyright © 2018 JoyInABox. All Rights Reserved.</p>
-      </footer>
-		</body>
-	</html>
+    </footer>
+	</body>
+</html>
