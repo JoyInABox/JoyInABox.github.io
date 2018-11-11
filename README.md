@@ -1,2 +1,2 @@
 # JoyInABox.github.io
-My first foray into web development!
+Website for Joy in a Box
