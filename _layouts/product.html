@@ -3,11 +3,9 @@ layout: default
 ---
 <div class="product">
   <h1>{{ page.title }}</h1>
-  <p class="meta">{{ page.date | date_to_string }}</p>
-</div>
-{% if page.img %}
-  <img src = {{ page.img }}>
-{% endif %}
-<div class="post">
+  {% if page.img %}
+    <img src={{ page.img }} height=500 width=500>
+  {% endif %}
   {{ content }}
 </div>
+<a href="#" onClick="sessvars.myObj = {product: {{ page.title }} }">Add to cart</a>
