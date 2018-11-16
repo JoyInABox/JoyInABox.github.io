@@ -5,8 +5,8 @@ title: About Joy in a Box
 <h1>Check Out</h1>
 <script>
   for (var i = 0; i < sessionStorage.length; i++){
-    document.getElementByID("cart").innerHTML = document.getElementByID('cart').innerHTML + "<tr><td>" + sessionStorage.key(i) + "</td><td>" + sessionStorage.getItem(sessionStorage.key(i)) + "</td></tr>";
-    document.getElementByID("out_form").innerHTML = document.getElementByID('out_form').innerHTML + "<input type='hidden' name='" + sessionStorage.key(i) + "' value=" + sessionStorage.getItem(sessionStorage.key(i)) + ">";
+    document.getElementById("cart").innerHTML = document.getElementById('cart').innerHTML + "<tr><td>" + sessionStorage.key(i) + "</td><td>" + sessionStorage.getItem(sessionStorage.key(i)) + "</td></tr>";
+    document.getElementById("out_form").innerHTML = document.getElementById('out_form').innerHTML + "<input type='hidden' name='" + sessionStorage.key(i) + "' value=" + sessionStorage.getItem(sessionStorage.key(i)) + ">";
   }
 </script>
 <table id="cart">
