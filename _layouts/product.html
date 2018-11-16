@@ -10,11 +10,12 @@ layout: default
 </div>
 <script>
   function addItem(){
-    if(sessionStorage.getItem('{{ page.id }}')){
-      sessionStorage.setItem('{{ page.id }}', sessionStorage.getItem('{{ page.id }}')+1);
+    if(sessionStorage.getItem('{{ page.product_id }}')){
+      sessionStorage.setItem('{{ page.product_id }}', parseInt(sessionStorage.getItem('{{ page.product_id }}')) + 1);
     } else {
-      sessionStorage.setItem('{{ page.id }}', 1);
+      sessionStorage.setItem('{{ page.product_id }}', 1);
     }
+    alert('Added {{ page.title }} to cart.');
   }
 </script>
 <a href="#" onClick="addItem();">Add to cart</a>
