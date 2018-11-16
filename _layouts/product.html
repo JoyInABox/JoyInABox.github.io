@@ -8,4 +8,14 @@ layout: default
   {% endif %}
   {{ content }}
 </div>
-<a href="#" onClick="sessvars.myObj = {'product': '{{ page.title }}'}">Add to cart</a>
+<script>
+  function addItem(){
+    if(sessionStorage.getItem('{{ page.title }}')){
+      sessionStorage.setItem('{{ page.title }}', sessionStorage.getItem('{{ page.title }}')+1);
+    } else {
+      sessionStorage.setItem('{{ page.title }}', 1);
+    }
+  }
+}
+</script>
+<a href="#" onClick="addItem();">Add to cart</a>
