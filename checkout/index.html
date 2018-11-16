@@ -2,24 +2,14 @@
 layout: default
 title: About Joy in a Box
 ---
-<h1>About Joy in a Box</h1>
-<p>Joy in a Box sources its premium products from all over the world to bring you joy, in a box.</p>
-<script>
-  function addItem(){
-    if(sessionStorage.getItem('{{ page.id }}')){
-      sessionStorage.setItem('{{ page.id }}', sessionStorage.getItem('{{ page.id }}')+1);
-    } else {
-      sessionStorage.setItem('{{ page.id }}', 1);
-    }
-  }
-</script>
+<h1>Check Out</h1>
 <script>
   for (var i = 0; i < sessionStorage.length; i++){
     document.getElementByID("cart").innerHTML = document.getElementByID('cart').innerHTML + "<tr><td>" + sessionStorage.key(i) + "</td><td>" + sessionStorage.getItem(sessionStorage.key(i)) + "</td></tr>";
     document.getElementByID("out_form").innerHTML = document.getElementByID('out_form').innerHTML + "<input type='hidden' name='" + sessionStorage.key(i) + "' value=" + sessionStorage.getItem(sessionStorage.key(i)) + ">";
   }
 </script>
-<table id='cart'>
+<table id="cart">
   <tr>
     <th>Item</th>
     <th>Quantity</th>
@@ -32,5 +22,3 @@ title: About Joy in a Box
   <input type="text" name="mail"><br>
   <input type="submit" value="Send">
 </form>
-
-<a href="#" onClick="addItem();">Add to cart</a>
