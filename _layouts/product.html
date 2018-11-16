@@ -10,10 +10,10 @@ layout: default
 </div>
 <script>
   function addItem(){
-    if(sessionStorage.getItem('{{ page.title }}')){
-      sessionStorage.setItem('{{ page.title }}', sessionStorage.getItem('{{ page.title }}')+1);
+    if(sessionStorage.getItem('{{ page.id }}')){
+      sessionStorage.setItem('{{ page.id }}', sessionStorage.getItem('{{ page.id }}')+1);
     } else {
-      sessionStorage.setItem('{{ page.title }}', 1);
+      sessionStorage.setItem('{{ page.id }}', 1);
     }
   }
 </script>
