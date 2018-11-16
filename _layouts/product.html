@@ -10,10 +10,10 @@ layout: default
 </div>
 <script>
   function addItem(){
-    if(sessionStorage.getItem('{{ page.product_id }}')){
-      sessionStorage.setItem('{{ page.product_id }}', parseInt(sessionStorage.getItem('{{ page.product_id }}')) + 1);
+    if(sessionStorage.getItem('{{ page.title }}')){
+      sessionStorage.setItem('{{ page.title }}', parseInt(sessionStorage.getItem('{{ page.title }}')) + 1);
     } else {
-      sessionStorage.setItem('{{ page.product_id }}', 1);
+      sessionStorage.setItem('{{ page.title }}', 1);
     }
     alert('Added {{ page.title }} to cart.');
   }
