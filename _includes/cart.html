@@ -24,7 +24,7 @@
   if (sessionStorage.length > 0){
     document.getElementById("cart_div").innerHTML = '<table id="cart"><tr><th>Item</th><th>Quantity</th><th>Add</th><th>Decrease</th><th>Remove</th></tr></table>';
     for (var i = 0; i < sessionStorage.length; i++){
-      document.getElementById("cart").innerHTML = document.getElementById("cart").innerHTML + "<tr><td>" + sessionStorage.key(i) + "</td><td>" + sessionStorage.getItem(sessionStorage.key(i)) + "</td><td><a href='#' onClick='increaseItem(" + sessionStorage.key(i) + ")'>Add</a></td><td><a href='#' onClick='decreaseItem(" + sessionStorage.key(i) + ")'>Decrease</a></td><td><a href='#' onClick='removeItem(" + sessionStorage.key(i) + ")'>Remove All</a></td></tr>";
+      document.getElementById("cart").innerHTML = document.getElementById("cart").innerHTML + "<tr><td>" + sessionStorage.key(i) + "</td><td>" + sessionStorage.getItem(sessionStorage.key(i)) + "</td><td><a href='#' onClick='increaseItem('" + sessionStorage.key(i) + "')'>Add</a></td><td><a href='#' onClick='decreaseItem('" + sessionStorage.key(i) + "')'>Decrease</a></td><td><a href='#' onClick='removeItem('" + sessionStorage.key(i) + "')'>Remove All</a></td></tr>";
       document.getElementById("out_form").innerHTML = document.getElementById("out_form").innerHTML + "<input type='hidden' name='" + sessionStorage.key(i) + "' value=" + sessionStorage.getItem(sessionStorage.key(i)) + ">";
     }
   }
