@@ -3,12 +3,7 @@ layout: default
 title: About Joy in a Box
 ---
 <h1>Check Out</h1>
-<table id="cart">
-  <tr>
-    <th>Item</th>
-    <th>Quantity</th>
-  </tr>
-</table>
+{% include cart.html %}
 <form action="mailto:ninarubikfairchild@gmail.com" method="post" enctype="text/plain" id="out_form">
   Name:<br>
   <input type="text" name="name"><br>
@@ -16,9 +11,3 @@ title: About Joy in a Box
   <input type="text" name="mail"><br>
   <input type="submit" value="Send">
 </form>
-<script>
-  for (var i = 0; i < sessionStorage.length; i++){
-    document.getElementById("cart").innerHTML = document.getElementById("cart").innerHTML + "<tr><td>" + sessionStorage.key(i) + "</td><td>" + sessionStorage.getItem(sessionStorage.key(i)) + "</td></tr>";
-    document.getElementById("out_form").innerHTML = document.getElementById("out_form").innerHTML + "<input type='hidden' name='" + sessionStorage.key(i) + "' value=" + sessionStorage.getItem(sessionStorage.key(i)) + ">";
-  }
-</script>
