@@ -10,17 +10,16 @@
         sessionStorage.removeItem(product);
       }
     }
+    location.reload();
   }
   function removeItem(product){
-    if(sessionStorage.getItem(product)){
-        sessionStorage.removeItem(product);
-      }
+    sessionStorage.removeItem(product);
+    location.reload();
   }
   function increaseItem(product){
-    if(sessionStorage.getItem(product)){
-        var itemCount = parseInt(sessionStorage.getItem(product));
-        sessionStorage.setItem(product, itemCount + 1);
-      }
+    var itemCount = parseInt(sessionStorage.getItem(product));
+    sessionStorage.setItem(product, itemCount + 1);
+    location.reload();
   }
   if (sessionStorage.length > 0){
     document.getElementById("cart_div").innerHTML = '<table id="cart"><tr><th>Item</th><th>Quantity</th><th>Add</th><th>Decrease</th><th>Remove</th></tr></table>';
