@@ -16,7 +16,7 @@ layout: default
     } else {
       sessionStorage.setItem('{{ page.title }}', 1);
     }
-    alert('Added {{ page.title }} to cart.');
+    location.reload();
   }
 </script>
 <a href="#" onClick="addItem();">Add to cart</a>
