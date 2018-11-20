@@ -8,6 +8,7 @@ layout: default
   {% endif %}
   {{ content }}
 </div>
+{% include cart.html %}
 <script>
   function addItem(){
     if(sessionStorage.getItem('{{ page.title }}')){
