@@ -1,10 +1,19 @@
 <div id="cart_div">
 </div>
 <script>
+  function removeItem(product){
+    if(sessionStorage.getItem(product)){
+      var itemCount = parseInt(sessionStorage.getItem(product));
+      if(itemCount > 1){
+        sessionStorage.setItem(product, itemCount - 1);
+      } else {
+        sessionStorage.removeItem(product);
+      }
+  }
   if (sessionStorage.length > 0){
-    document.getElementById("cart_div").innerHTML = '<table id="cart"><tr><th>Item</th><th>Quantity</th></tr></table>'
+    document.getElementById("cart_div").innerHTML = '<table id="cart"><tr><th>Item</th><th>Quantity</th><th>Remove</th></tr></table>'
     for (var i = 0; i < sessionStorage.length; i++){
-      document.getElementById("cart").innerHTML = document.getElementById("cart").innerHTML + "<tr><td>" + sessionStorage.key(i) + "</td><td>" + sessionStorage.getItem(sessionStorage.key(i)) + "</td></tr>";
+      document.getElementById("cart").innerHTML = document.getElementById("cart").innerHTML + "<tr><td>" + sessionStorage.key(i) + "</td><td>" + sessionStorage.getItem(sessionStorage.key(i)) + "</td><td><a href='#' onClick='removeItem(" + sessionStorage.key(i) + ")'></td></tr>";
       document.getElementById("out_form").innerHTML = document.getElementById("out_form").innerHTML + "<input type='hidden' name='" + sessionStorage.key(i) + "' value=" + sessionStorage.getItem(sessionStorage.key(i)) + ">";
     }
   }
