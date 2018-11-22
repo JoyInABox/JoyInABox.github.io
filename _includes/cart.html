@@ -2,38 +2,38 @@
 </div>
 <script>
   function decreaseItem(product){
-    if(localStorage.getItem(product)){
-      var itemCount = parseInt(localStorage.getItem(product));
+    if(sessionStorage.getItem(product)){
+      var itemCount = parseInt(sessionStorage.getItem(product));
       if(itemCount > 1){
-        localStorage.setItem(product, itemCount - 1);
+        sessionStorage.setItem(product, itemCount - 1);
       } else {
-        localStorage.removeItem(product);
+        sessionStorage.removeItem(product);
       }
     }
     location.reload();
   }
   function removeItem(product){
-    localStorage.removeItem(product);
+    sessionStorage.removeItem(product);
     location.reload();
   }
   function increaseItem(product){
-    var itemCount = parseInt(localStorage.getItem(product));
-    localStorage.setItem(product, itemCount + 1);
+    var itemCount = parseInt(sessionStorage.getItem(product));
+    sessionStorage.setItem(product, itemCount + 1);
     location.reload();
   }
   function parseStorage(storage){
     var parsed = ""
     for (var i = 0; i < storage.length; i++){
-      parsed = parsed + localStorage.key(i) + ", " + localStorage.getItem(localStorage.key(i)) + "\r\n"
+      parsed = parsed + sessionStorage.key(i) + ", " + sessionStorage.getItem(sessionStorage.key(i)) + "\r\n"
     }
     return parsed
   }
-  if (localStorage.length > 0){
+  if (sessionStorage.length > 0){
     document.getElementById("cart_div").innerHTML = '<table id="cart"><tr><th>Item</th><th>Quantity</th><th>Add</th><th>Decrease</th><th>Remove</th></tr></table>';
-    for (var i = 0; i < localStorage.length; i++){
-      document.getElementById("cart").innerHTML = document.getElementById("cart").innerHTML + "<tr><td>" + localStorage.key(i) + "</td><td>" + localStorage.getItem(localStorage.key(i)) + "</td><td><a href='#' onClick='increaseItem(\"" + localStorage.key(i) + "\")'>Add</a></td><td><a href='#' onClick='decreaseItem(\"" + localStorage.key(i) + "\")'>Decrease</a></td><td><a href='#' onClick='removeItem(\"" + localStorage.key(i) + "\")'>Remove All</a></td></tr>";
-      //document.getElementById("out_form").innerHTML = document.getElementById("out_form").innerHTML + "<input type='hidden' name='" + localStorage.key(i) + "' value=" + localStorage.getItem(localStorage.key(i)) + ">";
+    for (var i = 0; i < sessionStorage.length; i++){
+      document.getElementById("cart").innerHTML = document.getElementById("cart").innerHTML + "<tr><td>" + sessionStorage.key(i) + "</td><td>" + sessionStorage.getItem(sessionStorage.key(i)) + "</td><td><a href='#' onClick='increaseItem(\"" + sessionStorage.key(i) + "\")'>Add</a></td><td><a href='#' onClick='decreaseItem(\"" + sessionStorage.key(i) + "\")'>Decrease</a></td><td><a href='#' onClick='removeItem(\"" + sessionStorage.key(i) + "\")'>Remove All</a></td></tr>";
+      //document.getElementById("out_form").innerHTML = document.getElementById("out_form").innerHTML + "<input type='hidden' name='" + sessionStorage.key(i) + "' value=" + sessionStorage.getItem(sessionStorage.key(i)) + ">";
     }
-    document.getElementById("cart_div").innerHTML = document.getElementById("cart_div").innerHTML + "<a href='https://docs.google.com/forms/d/e/1FAIpQLSfXSYQIqLO-VsZUTwXFk843-8joOznGtYXH8kSqkPMSJ5t84Q/viewform?usp=pp_url&entry.157113495="+parseStorage(localStorage)+"'>Check Out</a>";
+    document.getElementById("cart_div").innerHTML = document.getElementById("cart_div").innerHTML + "<a href='https://docs.google.com/forms/d/e/1FAIpQLSfXSYQIqLO-VsZUTwXFk843-8joOznGtYXH8kSqkPMSJ5t84Q/viewform?usp=pp_url&entry.157113495="+parseStorage(sessionStorage)+"'>Check Out</a>";
   }
 </script>
