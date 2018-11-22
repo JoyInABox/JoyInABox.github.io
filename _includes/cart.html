@@ -24,7 +24,7 @@
   function parseStorage(storage){
     var parsed = ""
     for (var i = 0; i < storage.length; i++){
-      parsed = parsed + sessionStorage.key(i) + ", " + sessionStorage.getItem(sessionStorage.key(i)) + "\r\n"
+      parsed = parsed + "\"" + sessionStorage.key(i) + "\", " + sessionStorage.getItem(sessionStorage.key(i)) + "; "
     }
     return parsed
   }
