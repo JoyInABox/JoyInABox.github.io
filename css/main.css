@@ -56,3 +56,19 @@ a.article-link {
 	text-decoration: none;
 	color: #000;
 }
+.parallax { 
+  /* Set a specific height */
+  height: 80%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
