@@ -5,6 +5,14 @@ p {
 h1, h2 {
 	font-family: 'Staatliches', sans-serif;
 	color: #000;
+td {
+	font-family: 'Alegreya', serif;
+	color: #000;
+}
+th {
+	font-family: 'Alegreya', serif;
+	color: #000;
+}
 }
 #menu {
   	overflow: hidden;
