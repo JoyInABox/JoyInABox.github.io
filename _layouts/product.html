@@ -4,7 +4,8 @@ layout: default
 <div class="product">
   <h1>{{ page.title }}</h1>
   {% if page.img %}
-    <img src={{ page.img }} height=500 width=500>
+  	<div class="parallax" style="background-image: url({{ page.img }})">
+		</div>
   {% endif %}
   {{ content }}
 </div>
