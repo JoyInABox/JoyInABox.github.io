@@ -1,3 +1,48 @@
-body {
-  font-family: 'Helvetica', 'Roboto', 'Arial', 'Sans-Serif'
+p {
+	font-family: 'Alegreya', serif;
+	color: #000;
+}
+h1, h2 {
+	font-family: 'Staatliches', sans-serif;
+	color: #000;
+}
+#menu {
+  	overflow: hidden;
+  	background-color: #FFF;
+	width: 100%;
+}
+#menu a {
+	font-family: 'Staatliches', sans-serif;
+	text-decoration: none;
+	color: #999;
+}
+#menu a:hover {
+	font-family: 'Staatliches', sans-serif;
+	text-decoration: none;
+	color: #000;
+}
+.sticky-top {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+.sticky-top + .content {
+	padding-top: 60px;
+}
+#content {
+	padding: 10%;
+	padding-top: 0%;
+}
+.article-link {
+	height: 50%; 
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 10%;
+}
+a.article-link {
+	text-decoration: none;
+}
+.article-link h1 {
+	color: #FFF;
 }
