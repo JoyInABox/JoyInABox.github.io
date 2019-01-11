@@ -3,8 +3,10 @@ layout: default
 title: Different Kinds of Joy in a Box
 ---
 <h1>{{ page.title }}</h1>
-<ul class="product-list">
-  {% for product in site.posts %}
-  <li><a href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</a></li>
-  {% endfor %}
-</ul>
+{% for product in site.posts %}
+<a class='article-link' href="{{ product.url }}">
+    <div class='article-link' style="background-image: url(\'{{ product.img }}\');">
+        <h1>{{ product.title }}</h1>
+    </div>
+</a>
+{% endfor %}
