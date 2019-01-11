@@ -46,3 +46,13 @@ a.article-link {
 .article-link h1 {
 	color: #FFF;
 }
+.product-list a {
+	font-family: 'Staatliches', sans-serif;
+	text-decoration: none;
+	color: #999;
+}
+.product-list a:hover {
+	font-family: 'Staatliches', sans-serif;
+	text-decoration: none;
+	color: #000;
+}
